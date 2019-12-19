@@ -1,0 +1,322 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "version": "2017-12-01",
+        "title": "link.fish",
+        "description": "API to easily extract data from websites.\n\n\n# Base URL\n\n\nAll URLs referenced in the documentation have the following base:\n\n\n```\nhttps:\/\/api.link.fish\n```\n\n\nThe REST API is only served over HTTPS. To ensure data privacy, unencrypted HTTP is not supported.\n\n\n# Authentication\nHTTP requests to the REST API are protected with [HTTP Basic authentication](https:\/\/en.wikipedia.org\/wiki\/Basic_access_authentication). You will use the email address of your link.fish account as the username and your API access token as the password for HTTP Basic authentication.\n\nIf you do not have an account yet, go to [https:\/\/link.fish\/api](https:\/\/link.fish\/api) and create one first.\n\nYou will receive the API access token automatically via email after you signed up. To generate a new token and invalidate the current one log into your link.fish  account at [https:\/\/app.link.fish](https:\/\/app.link.fish) and go to: \"Plugins\" -> \"API Dashboard\"\n\nThere you can also see how many credits you used already.\n\n\n# Errors",
+        "termsOfService": "https:\/\/link.fish\/terms-of-service\/"
+    },
+    "servers": [
+        "httpsapi.link.fish\/"
+    ],
+    "paths": {
+        "\/Urls\/apps": {
+            "get": {
+                "summary": "Get mobile apps",
+                "description": "Visits the URL and checks if there are mobile apps on them and returns the found ones.\n\nWill by default return the app identifiers and not the full URL to the apps. To return URLs instead set the parameter \"return_urls\" to true.\n\nThe URLs can also be created manually like this:\n\n| Property | URL                                                |\n| -------- | -------------------------------------------------- |\n| android  | https:\/\/play.google.com\/store\/apps\/details?id={ID} |\n| ios      | https:\/\/i",
+                "operationId": "UrlsAppsGet",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "url",
+                        "in": "query",
+                        "description": "The URL of the website to query"
+                    },
+                    {
+                        "name": "return_urls",
+                        "in": "query",
+                        "description": "Returns app URLs instead of the identifiers"
+                    },
+                    {
+                        "name": "browser_render",
+                        "in": "query",
+                        "description": "If the page should be fully rendered with a browser to extract data. The request will then cost 5 credits instead of 1!"
+                    }
+                ]
+            }
+        },
+        "\/Urls\/browser-data": {
+            "get": {
+                "summary": "Extract data (browser)",
+                "description": "Visits the URL with a full browser and extracts the data. This request costs 5 credits.",
+                "operationId": "UrlsBrowserDataGet",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "url",
+                        "in": "query",
+                        "description": "The URL of the website to query"
+                    },
+                    {
+                        "name": "item_format",
+                        "in": "query",
+                        "description": "If the items should be return \"normal\" with multiple levels or \"flat\" with just one level and linked instead."
+                    },
+                    {
+                        "name": "simplify_special_types",
+                        "in": "query",
+                        "description": "Some types like \"PropertyValue\" do save key and value in separate properties which makes the data harder to process. If this option gets set it converts them automatically into the regular key -> value format."
+                    },
+                    {
+                        "name": "screenshot",
+                        "in": "query",
+                        "description": "If and what kind of screenshot should be returned. Do only request screenshot generation when really needed because it will increase the response time significantly."
+                    },
+                    {
+                        "name": "screenshot_width",
+                        "in": "query",
+                        "description": "The widh of the screenshot in pixel."
+                    },
+                    {
+                        "name": "screenshot_file_format",
+                        "in": "query",
+                        "description": "The file format of the screenshot"
+                    }
+                ]
+            }
+        },
+        "\/Urls\/browser-screenshot": {
+            "get": {
+                "summary": "Generate screenshot (browser)",
+                "description": "Visits the URL with full browser and creates a screenshot. This request costs 5 credits.",
+                "operationId": "UrlsBrowserScreenshotGet",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "url",
+                        "in": "query",
+                        "description": "The URL of the website to query"
+                    },
+                    {
+                        "name": "type",
+                        "in": "query",
+                        "description": "What kind of screenshot should be returned. If it should be a regular 16:9 screenshot or one with the full page height"
+                    },
+                    {
+                        "name": "file_format",
+                        "in": "query",
+                        "description": "The file format of the screenshot"
+                    },
+                    {
+                        "name": "width",
+                        "in": "query",
+                        "description": "The widh of the screenshot in pixel."
+                    }
+                ]
+            }
+        },
+        "\/Urls\/data": {
+            "get": {
+                "summary": "Extract data",
+                "description": "Visits the URL and extracts the data.",
+                "operationId": "UrlsDataGet",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "url",
+                        "in": "query",
+                        "description": "The URL of the website to query"
+                    },
+                    {
+                        "name": "item_format",
+                        "in": "query",
+                        "description": "If the items should be return \"normal\" with multiple levels or \"flat\" with just one level and linked instead."
+                    },
+                    {
+                        "name": "simplify_special_types",
+                        "in": "query",
+                        "description": "Some types like \"PropertyValue\" do save key and value in separate properties which makes the data harder to process. If this option gets set it converts them automatically into the regular key -> value format."
+                    },
+                    {
+                        "name": "browser_render",
+                        "in": "query",
+                        "description": "If the page should be fully rendered with a browser to extract data. The request will then cost 5 credits instead of 1!"
+                    }
+                ]
+            }
+        },
+        "\/Urls\/geo-coordinates": {
+            "get": {
+                "summary": "Get geo coordinates",
+                "description": "Visits the URL and checks if there are Geo Coordinates on them and returns the found ones.\n\nProperties only get set when a value for both latitude and longitude have been found. That means that if no geo coordinates have been found only the property \"url\" will be set.",
+                "operationId": "UrlsGeoCoordinatesGet",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "url",
+                        "in": "query",
+                        "description": "The URL of the website to query"
+                    },
+                    {
+                        "name": "browser_render",
+                        "in": "query",
+                        "description": "If the page should be fully rendered with a browser to extract data. The request will then cost 5 credits instead of 1!"
+                    }
+                ]
+            }
+        },
+        "\/Urls\/social-media": {
+            "get": {
+                "summary": "Get social media accounts",
+                "description": "Visits the URL and checks if there are any social media accounts and returns the found ones.\n\nWill by default return the account identifiers and not the full URL to the profiles. To return URLs instead set the parameter \"return_urls\" to true.\n\nThe URLs can also be created manually like this:\n\n| Property        | URL                                    |\n| --------------- | -------------------------------------- |\n| facebookPage    | https:\/\/facebook.com\/{ID}              |\n| githubUser      | htt",
+                "operationId": "UrlsSocialMediaGet",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "url",
+                        "in": "query",
+                        "description": "The URL of the website to query"
+                    },
+                    {
+                        "name": "return_urls",
+                        "in": "query",
+                        "description": "Returns app URLs instead of the identifiers"
+                    },
+                    {
+                        "name": "browser_render",
+                        "in": "query",
+                        "description": "If the page should be fully rendered with a browser to extract data. The request will then cost 5 credits instead of 1!"
+                    }
+                ]
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "ApiResponsError": {
+                "type": "object",
+                "properties": {
+                    "message": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "status": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "Apps": {
+                "type": "object",
+                "properties": {
+                    "android": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "ios": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "url": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "GeoCoordinates": {
+                "type": "object",
+                "properties": {
+                    "latitude": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "longitude": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "url": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "SocialMedia": {
+                "type": "object",
+                "properties": {
+                    "facebookPage": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "githubUser": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "linkedInCompany": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "twitter": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "url": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "Url": {
+                "type": "object",
+                "properties": {
+                    "additionalData": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "favicon": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "items": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "statusCode": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "title": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "url": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "UrlBrowser": {
+                "type": "object",
+                "properties": {
+                    "additionalData": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "favicon": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "items": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "screenshot": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "statusCode": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "title": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "url": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            }
+        }
+    }
+}
