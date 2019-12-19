@@ -1,0 +1,57 @@
+{
+    "name": "link.fish",
+    "description": "<p>Automatically get the information of the websites you are interested in and work with it together with others in real-time. Depending on the page you bookmark link.fish automatically extracts the data you actually care about. No matter if bedrooms for apartments, rating of movies or the cook time of your favorite recipe. Invite other people to your collection to work with them or make it public for everbody to see. All changes made will immediately be visible by everyone.<\/p>",
+    "image": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-evangelist-site\/company\/logos\/link-fish-logo.png",
+    "tags": [
+        "api provider",
+        "content",
+        "have api",
+        "links",
+        "relative data",
+        "scraping",
+        "service api"
+    ],
+    "created": "2019-12-19",
+    "modified": "2019-12-19",
+    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/link-fish\/master\/apis.json",
+    "specificationVersion": "0.14",
+    "apis": [
+        {
+            "name": "link.fish",
+            "description": null,
+            "image": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-evangelist-site\/company\/logos\/link-fish-logo.png",
+            "humanURL": "http:\/\/link.fish",
+            "baseURL": "",
+            "tags": [],
+            "properties": [
+                {
+                    "type": "x-openapi",
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/link-fish-openapi.json"
+                },
+                {
+                    "type": "x-openapi",
+                    "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-evangelist-site\/company\/openapis\/link-fish.json"
+                }
+            ]
+        }
+    ],
+    "include": [],
+    "x-common": [
+        {
+            "type": "Developers",
+            "url": "https:\/\/link.fish\/api\/"
+        },
+        {
+            "type": "Github",
+            "url": "https:\/\/github.com\/link-fish"
+        },
+        {
+            "type": "Twitter",
+            "url": "https:\/\/twitter.com\/linkfish_"
+        },
+        {
+            "type": "Website",
+            "url": "http:\/\/link.fish"
+        }
+    ]
+}
