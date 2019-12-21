@@ -1,5 +1,5 @@
 {
-    "id": "ec454baca0e8fc3401a6e6c7273567d4",
+    "id": "9e1ec8c7f2b26a4b238f1cba55833589",
     "name": "link.fish",
     "description": null,
     "auth": null,
@@ -10,7 +10,7 @@
     "folders": [],
     "requests": [
         {
-            "id": "e20ca8bb73e61cf783972b1513fed917",
+            "id": "ca420bf0c318b4c8020637766cf61374",
             "name": "Get mobile apps",
             "url": "httpsapi.link.fish\/\/Urls\/apps",
             "description": "Visits the URL and checks if there are mobile apps on them and returns the found ones.\n\nWill by default return the app identifiers and not the full URL to the apps. To return URLs instead set the parameter \"return_urls\" to true.\n\nThe URLs can also be created manually like this:\n\n| Property | URL                                                |\n| -------- | -------------------------------------------------- |\n| android  | https:\/\/play.google.com\/store\/apps\/details?id={ID} |\n| ios      | https:\/\/i",
@@ -51,11 +51,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "ec454baca0e8fc3401a6e6c7273567d4",
+            "collectionId": "9e1ec8c7f2b26a4b238f1cba55833589",
             "rawModeData": ""
         },
         {
-            "id": "759254d236897541df5026edf22004a9",
+            "id": "a9e0783e6fcecc9bc883165400315aa1",
             "name": "Extract data (browser)",
             "url": "httpsapi.link.fish\/\/Urls\/browser-data",
             "description": "Visits the URL with a full browser and extracts the data. This request costs 5 credits.",
@@ -117,11 +117,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "ec454baca0e8fc3401a6e6c7273567d4",
+            "collectionId": "9e1ec8c7f2b26a4b238f1cba55833589",
             "rawModeData": ""
         },
         {
-            "id": "a046cb788277ca0f78aa5b073030175b",
+            "id": "7d50d4299719788107fbe5a0f0d75a4f",
             "name": "Generate screenshot (browser)",
             "url": "httpsapi.link.fish\/\/Urls\/browser-screenshot",
             "description": "Visits the URL with full browser and creates a screenshot. This request costs 5 credits.",
@@ -169,11 +169,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "ec454baca0e8fc3401a6e6c7273567d4",
+            "collectionId": "9e1ec8c7f2b26a4b238f1cba55833589",
             "rawModeData": ""
         },
         {
-            "id": "f6edf8dcd148e70944863d092443ad2f",
+            "id": "34b499f9d61fe5c3b3198d9c218244f1",
             "name": "Extract data",
             "url": "httpsapi.link.fish\/\/Urls\/data",
             "description": "Visits the URL and extracts the data.",
@@ -221,11 +221,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "ec454baca0e8fc3401a6e6c7273567d4",
+            "collectionId": "9e1ec8c7f2b26a4b238f1cba55833589",
             "rawModeData": ""
         },
         {
-            "id": "cd490e7afa5b231e3b0664402932c935",
+            "id": "0aa3607ec078139459380ec7bb5bc8db",
             "name": "Get geo coordinates",
             "url": "httpsapi.link.fish\/\/Urls\/geo-coordinates",
             "description": "Visits the URL and checks if there are Geo Coordinates on them and returns the found ones.\n\nProperties only get set when a value for both latitude and longitude have been found. That means that if no geo coordinates have been found only the property \"url\" will be set.",
@@ -259,11 +259,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "ec454baca0e8fc3401a6e6c7273567d4",
+            "collectionId": "9e1ec8c7f2b26a4b238f1cba55833589",
             "rawModeData": ""
         },
         {
-            "id": "6970467183e87c44ef444c85c8387e36",
+            "id": "1a88472377ecc17b2ee640f921f35454",
             "name": "Get social media accounts",
             "url": "httpsapi.link.fish\/\/Urls\/social-media",
             "description": "Visits the URL and checks if there are any social media accounts and returns the found ones.\n\nWill by default return the account identifiers and not the full URL to the profiles. To return URLs instead set the parameter \"return_urls\" to true.\n\nThe URLs can also be created manually like this:\n\n| Property        | URL                                    |\n| --------------- | -------------------------------------- |\n| facebookPage    | https:\/\/facebook.com\/{ID}              |\n| githubUser      | htt",
@@ -304,7 +304,7 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "ec454baca0e8fc3401a6e6c7273567d4",
+            "collectionId": "9e1ec8c7f2b26a4b238f1cba55833589",
             "rawModeData": ""
         }
     ]
